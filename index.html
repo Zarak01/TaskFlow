@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Todo App</title>
+</head>
+<body>
+    <div class="container">
+        <!-- ************************* Header Section ************************* -->
+        <header>
+            <div class="task-dialog">
+                <h1>TaskFlow</h1>
+                <p>Task Management Dashbord</p>
+            </div>
+            <div class="logo">
+                <h1><i class="fa-solid fa-list-check"></i></h1>
+            </div>
+        </header>
+        <hr/>
+
+        <!-- ************************* TaskFlow Content ************************* -->
+        <main>
+
+            <!-- ************************* Task Summary Section ************************* -->
+            <section id="task-summary">
+                <div>
+                    <h3>Total</h3>
+                    <p id="total-task">0</p>
+                </div>
+
+                <div>
+                    <h3>Completed</h3>
+                    <p id="completed-task">0</p>
+                </div>
+                
+                <div>
+                    <h3>Pending</h3>
+                    <p id="pending-task">0</p>
+                </div>
+            </section>
+            <hr/>
+
+            <!-- ************************* Task Input Section ************************* -->
+            <section id="task-inputs">
+                <form id="task-form">
+                    <input type="text" id="task-input" placeholder="Enter a task" required>
+                    <button type="submit" id="add-task-btn"><i class="fa-solid fa-plus"></i>Add Task</button>
+                </form>
+                <ul id="task-list"></ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
