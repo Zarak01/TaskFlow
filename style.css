@@ -21,12 +21,14 @@ body {
     color: var(--text-color);
     font-family: "DM Sans", sans-serif;
     min-height: 100vh;
+    display: grid;
+    place-items: center;
 }
 
 body .container {
     width: calc(100% - 32px);
     max-width: 500px;
-    margin: 50px auto;
+    margin: 16px auto;
     padding: 24px;
     background-color: var(--surface-color);
     border: 1px solid var(--border-color);
