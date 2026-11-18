@@ -1,0 +1,291 @@
+:root {
+    --primary-color: #2563EB;
+    --secondary-color: #D9F26A;
+    --background-color: #F4F7FC;
+    --text-color: #172554;
+    --surface-color: #FFFFFF;
+    --muted-text: #64748B;
+    --border-color: #DCE4F0;
+    --hover-color: #EFF6FF;
+    --danger-color: #DC2626;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    border: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: "DM Sans", sans-serif;
+    min-height: 100vh;
+}
+
+body .container {
+    width: calc(100% - 32px);
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 24px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    box-shadow: 0 10px 35px rgba(23, 37, 84, 0.06);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    line-height: 1.4;
+}
+
+header h1,
+header h2,
+header p {
+    margin-top: 0;
+}
+
+/* --------------------------- Dashboard --------------------------- */
+
+main #task-summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+    line-height: 1.4;
+}
+
+main #task-summary > div {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 12px;
+    background-color: var(--hover-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+main #task-summary h3 {
+    margin: 0 0 12px;
+    color: var(--muted-text);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+main #task-summary p {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 26px;
+    font-weight: 700;
+    text-align: left;
+}
+
+/* --------------------------- Task input --------------------------- */
+
+main #task-inputs {
+    margin-top: 24px;
+}
+
+main #task-inputs form {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+}
+
+main #task-inputs form input[type="text"] {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    padding: 12px 14px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--text-color);
+    font: inherit;
+}
+
+main #task-inputs form input[type="text"]::placeholder {
+    color: var(--muted-text);
+}
+
+main #task-inputs form input[type="text"]:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+main #task-inputs form button {
+    flex-shrink: 0;
+    padding: 12px 16px;
+    margin: 0;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+main #task-inputs form button:hover {
+    background-color: #1D4ED8;
+    border-color: #1D4ED8;
+    color: #FFFFFF;
+}
+
+main #task-inputs form button:active {
+    background-color: #1E40AF;
+    border-color: #1E40AF;
+}
+
+/* --------------------------- Task list  --------------------------- */
+
+main #task-inputs #task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+main #task-inputs #task-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 15px;
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+main #task-inputs #task-list li:hover {
+    background-color: var(--hover-color);
+    border-color: #BFDBFE;
+}
+
+/* --------------------------- Checkboxes --------------------------- */
+
+main #task-inputs #task-list li .task-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    border: 2px solid #94A3B8;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+main #task-inputs #task-list li .task-checkbox:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+main #task-inputs #task-list li .task-checkbox:checked::after {
+    content: "✓";
+    display: block;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 16px;
+    font-size: 13px;
+}
+
+/* Task text */
+
+main #task-inputs #task-list li .task-text {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/* ----------------------------Edit and delete buttons ---------------------------- */
+
+main #task-inputs #task-list li .edit-btn,
+main #task-inputs #task-list li .delete-btn {
+    flex-shrink: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 8px;
+    font-size: 15px;
+    transition: opacity 0.2s ease;
+}
+
+main #task-inputs #task-list li .edit-btn {
+    color: var(--primary-color);
+}
+
+main #task-inputs #task-list li .delete-btn {
+    color: var(--danger-color);
+}
+
+main #task-inputs #task-list li .edit-btn:hover,
+main #task-inputs #task-list li .delete-btn:hover {
+    opacity: 0.65;
+}
+
+/* --------------------------- Completed tasks --------------------------- */
+
+main #task-inputs #task-list .task-item.completed {
+    background-color: #F8FAFC;
+}
+
+main #task-inputs #task-list .task-item.completed .task-text {
+    color: var(--muted-text);
+    text-decoration: line-through;
+    opacity: 1;
+}
+
+/* --------------------------- Mobile responsiveness --------------------------- */
+
+@media (max-width: 600px) {
+    body .container {
+        margin: 16px auto;
+        padding: 16px;
+    }
+
+    header {
+        margin-top: 8px;
+    }
+
+    main #task-summary > div {
+        padding: 12px 8px;
+    }
+
+    main #task-summary h3 {
+        font-size: 11px;
+    }
+
+    main #task-summary p {
+        font-size: 22px;
+    }
+
+    main #task-inputs form {
+        flex-wrap: wrap;
+    }
+
+    main #task-inputs form input[type="text"] {
+        flex: 1 1 180px;
+    }
+
+    main #task-inputs #task-list li {
+        gap: 8px;
+        padding: 12px 10px;
+    }
+
+    main #task-inputs #task-list li .edit-btn,
+    main #task-inputs #task-list li .delete-btn {
+        padding: 6px;
+    }
+}
